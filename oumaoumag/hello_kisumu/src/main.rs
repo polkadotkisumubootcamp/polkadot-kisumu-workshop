@@ -25,7 +25,7 @@ fn main() {
     let greetings = vec![
         "Habari ya Kisumu! 🌞",
         "Welcome to Lakeside! 🌊",
-        "Kisumu ni moja! 🌈",
+        "Kisumu ni Nyumbani! 🌈",
         "Silicon Savannah! 💻",
         "Hello Kisumu! 🎉"
     ];
