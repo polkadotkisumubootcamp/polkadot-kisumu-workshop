@@ -1,5 +1,5 @@
 fn main() {
 
-   let city = "Hello Kisumu";
-   println!("This is polkadot, {kisumu}")
+   let city = "Hello Kisumu!";
+   println!("{city} This is a polkadot bootcamp")
 }
