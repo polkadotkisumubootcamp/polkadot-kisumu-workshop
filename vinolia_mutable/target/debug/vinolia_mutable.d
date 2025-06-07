@@ -1,0 +1,1 @@
+/mnt/c/Users/lenovo/Desktop/polkadot_bootcamp/polkadot-kisumu-workshop/vinolia_mutable/target/debug/vinolia_mutable: /mnt/c/Users/lenovo/Desktop/polkadot_bootcamp/polkadot-kisumu-workshop/vinolia_mutable/src/main.rs
