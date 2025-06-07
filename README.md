@@ -10,8 +10,8 @@ Whether you're a beginner or brushing up your Rust skills, you're in the right p
 ## 📝 What’s This Repo For?
 
 Participants will:
-- Create a branch for their work
-- Add their exercises in a personal folder
+- Create a branch for their work with their name
+- Add their exercises in a personal folder which is based on weekly exercises
 ---
 
 ## 🚀 How to Submit Your Exercises
@@ -44,9 +44,15 @@ git push origin your-name-exercises(branch name)
 polkadot-kisumu-workshop/
 ├── README.md
 ├── alice/
-│   └── variables.rs
+│   ├── week1/
+│   │   └── variables.rs
+│   └── week2/
+│       └── ownership.rs
 ├── bob/
-│   └── ownership.rs
+│   ├── week1/
+│   │   └── variables.rs
+│   └── week2/
+│       └── ownership.rs
 
 ```
 🙌 Need Help?
