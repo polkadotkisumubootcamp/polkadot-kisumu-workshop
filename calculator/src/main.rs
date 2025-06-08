@@ -6,54 +6,81 @@ const WELCOME_BANNER: &str = "
 
 fn main() {
     println!("{}", WELCOME_BANNER);
-    println!("Enter first number:");
 
-    let mut input = String::new();
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Failed to read input");
+    // The significance of the infinite loop at this point is to make the calculator run continuously until the user decides to exit.
+    loop {
+        println!("Enter first number:");
 
-    let num1: f32 = input.trim().parse().expect("Please enter a valid number");
+        let mut input = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
 
-    println!("Enter second number:");
-
-    // Shadowing the input variable
-    input = String::new();
-
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Failed to read input");
-
-    let num2: f32 = input.trim().parse().expect("Please enter a valid number");
-
-    println!("Choose operation (+, -, *, /):");
-
-    // Shadowing the input variable
-    input = String::new();
-
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Failed to read input");
-
-    let operation = input.trim();
-
-    let result = match operation {
-        "+" => num1 + num2,
-        "-" => num1 - num2,
-        "*" => num1 * num2,
-        "/" => {
-            if num2 == 0.0 {
-                println!("Error: Division by zero!");
-                return;
-            } else {
-                num1 / num2
+        let num1: f32 = match input.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Invalid number! Try again.");
+                continue;
             }
-        }
-        _ => {
-            println!("Invalid operation!");
-            return;
-        }
-    };
+        };
 
-    println!("\n{} {} {} = {}", num1, operation, num2, result);
+        println!("Enter second number:");
+
+        // Shadowing the input variable
+        input = String::new();
+
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
+
+        let num2: f32 = match input.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Invalid number! Try again.");
+                continue;
+            }
+        };
+
+        println!("Choose operation (+, -, *, /):");
+
+        // Shadowing the input variable
+        input = String::new();
+
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
+
+        let operation = input.trim();
+
+        let result = match operation {
+            "+" => num1 + num2,
+            "-" => num1 - num2,
+            "*" => num1 * num2,
+            "/" => {
+                if num2 == 0.0 {
+                    println!("Error: Division by zero!");
+                    continue;
+                } else {
+                    num1 / num2
+                }
+            }
+            _ => {
+                println!("Invalid operation!");
+                continue;
+            }
+        };
+
+        println!("\n{} {} {} = {}", num1, operation, num2, result);
+
+        println!("\nDo you wish to perform another calculation? (Y/N)");
+        input = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
+
+        if input.trim().to_lowercase() != "y" {
+            println!("Thank you for using Polkadot Kisumu Workshop Calculator!");
+            break;
+        }
+    }
 }
