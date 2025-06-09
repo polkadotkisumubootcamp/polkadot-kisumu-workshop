@@ -1,0 +1,9 @@
+# Ignore target folders anywhere
+**/target/
+
+# Ignore Cargo.lock if you want (optional)
+**/Cargo.lock
+
+# Ignore editor temporary files
+*.swp
+*.tmp
