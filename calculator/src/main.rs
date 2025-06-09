@@ -16,7 +16,9 @@ fn get_number(prompt: &str) -> f64 {
 }
 
 fn main() {
-    println!("Welcome to the simple calculator!");
+
+    const HELLO_BANNER: &str = "Welcome to the Kisumu Polkadot calculator!";
+    println!("{}", HELLO_BANNER);
     
     loop {
         let num1 = get_number("Enter first number: ");
