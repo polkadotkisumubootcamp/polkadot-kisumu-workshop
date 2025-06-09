@@ -1,5 +1,5 @@
-module::Calculator::
+// module::Calculator::
 
-pub fn Calculator(expression: &str) {
-    println!("")
+pub fn calculator(expression: &str) {
+    println!("{}", expression);
 }

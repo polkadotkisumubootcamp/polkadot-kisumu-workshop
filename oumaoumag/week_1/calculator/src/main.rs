@@ -12,7 +12,9 @@ fn main() {
     .read_line(&mut problem)
     .expect("Failed to read line");
 
-    let result = Calculator(problem.trim());
+    // let result =
+     calculator(problem.trim());
 
-    println!("You types in: {}", problem)
+
+    println!("You typed in: {}", problem)
 }
