@@ -2,15 +2,20 @@ use std::io;
 use calculator::*;
 
 fn main() {
-    println!("Hello, Welcome To Ouma's Custom Simple Math Calculator!");
+    println!("{}",
+    colorize(&format!("Hello, Welcome To Ouma's Custom Simple Math Calculator!"), 21)
+);
 
-    println!("Please input your simple math problem.");
+    println!("{}",
+    colorize(&format!("Please input your simple math problem."), 4)
+);
 
     let mut problem = String::new();
 
     io::stdin()
     .read_line(&mut problem)
-    .expect("Failed to read line");
+    .expect(&colorize(&format!("Failed to read line"), 196)
+);
 
      calculator(problem.trim());
 }
