@@ -21,12 +21,26 @@ pub fn calculator(expression: &str) {
         Ok(v) => v,
         Err(_) => {
             eprinln!("Invalid number: {}", tokens[2]);
+            return;
+        }
+    };
+
+    let result = match tokens[1] {
+        "+" => 1st + 2nd,
+        "-" => 1st - 2nd,
+        "*" | "x" | "X" => 1st * 2nd,
+        "/" => {
+            if 2nd == 0.0 {
+                eprinln!("Error:division by zero");
+                return;
+            }
+            1st / 2nd
+        }
+        op => {
+            eprinln!("Unsupported operator: {}", op);
             return
         }
-    },
-    let sign = tokens[1].parse::< &str;
+    };
 
-    for token  in input {
-        println!("{}", token);
-    }
+        println!("{}", Result);
 }
