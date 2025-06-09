@@ -1,5 +1,3 @@
-// module::Calculator::
-
 pub fn calculator(expression: &str) {
     let tokens: Vec<&str> = expression.split_whitespace().collect();
 
@@ -42,5 +40,5 @@ pub fn calculator(expression: &str) {
         }
     };
 
-        println!("{}", Result);
+        println!("The Solution is : {}", result);
 }
