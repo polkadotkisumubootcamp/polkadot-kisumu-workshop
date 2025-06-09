@@ -17,7 +17,7 @@ pub fn calculator(expression: &str) {
         }
     };
 
-    let second = tokens[2].parse::<f64>() {
+    let second = match tokens[2].parse::<f64>() {
         Ok(v) => v,
         Err(_) => {
             eprintln!("Invalid number: {}", tokens[2]);
