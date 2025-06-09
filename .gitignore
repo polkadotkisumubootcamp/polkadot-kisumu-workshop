@@ -13,3 +13,6 @@ Cargo.lock
 **/*.lock
 **/incremental/
 **/.fingerprint/
+/target
+**/target
+
