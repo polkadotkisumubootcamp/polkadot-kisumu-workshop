@@ -9,7 +9,7 @@ pub fn calculator(expression: &str) {
     };
 
 
-    let 1st = match tokens[0].parse::<f64>() {
+    let first = match tokens[0].parse::<f64>() {
         Ok(v) => v,
         Err(_) => {
             eprintln!("Invalid number: {}", tokens[0]);
@@ -17,7 +17,7 @@ pub fn calculator(expression: &str) {
         }
     };
 
-    let 2nd = tokens[2].parse::<f64>() {
+    let second = tokens[2].parse::<f64>() {
         Ok(v) => v,
         Err(_) => {
             eprintln!("Invalid number: {}", tokens[2]);
@@ -26,15 +26,15 @@ pub fn calculator(expression: &str) {
     };
 
     let result = match tokens[1] {
-        "+" => 1st + 2nd,
-        "-" => 1st - 2nd,
-        "*" | "x" | "X" => 1st * 2nd,
+        "+" => first + second,
+        "-" => first - second,
+        "*" | "x" | "X" => first * second,
         "/" => {
-            if 2nd == 0.0 {
+            if second == 0.0 {
                 eprintln!("Error:division by zero");
                 return;
             }
-            1st / 2nd
+            first / second
         }
         op => {
             eprintln!("Unsupported operator: {}", op);
