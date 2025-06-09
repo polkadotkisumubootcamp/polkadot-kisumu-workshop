@@ -1,0 +1,1 @@
+/home/quinterabok/polkadot/polkadot-kisumu-workshop/quinter/week1/session2/calculator/target/debug/calculator: /home/quinterabok/polkadot/polkadot-kisumu-workshop/quinter/week1/session2/calculator/src/main.rs
