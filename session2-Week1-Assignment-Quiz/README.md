@@ -15,7 +15,4 @@ Build a calculator that:
 - Add colors using escape codes.
 
 ## 📅 Submission Deadline:
-Tuesday, 10th June 2025## 💡 Bonus:
-- Try using `f32` inputs instead of integers.
-- Create a `const` for a welcome banner.
-- Add colors using escape codes.
+Tuesday, 10th June 2025
