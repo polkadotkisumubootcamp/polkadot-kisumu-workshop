@@ -4,7 +4,7 @@ const APP_VERSION : &str = "version 2.0";
 fn main() {
 
    let mut city = "Hello Kisumu!";
-   city = "hello Kisii";
+   city = "Hello Kisii";
    let age : i32 = 50;
    let pi : f64 = 3.14;
    let is_in_class : bool = true;
@@ -15,7 +15,7 @@ fn main() {
    let diff = 5 -3;
    let mult = 5 *3;
    let div = 5 / 3;
-   let mod = 5 % 3;
+   let modl = 5 % 3;
 
 
 //    Shadowing - creating a new variable under same name
@@ -33,6 +33,6 @@ let spaces = spaces.len(); // shadow it as integer
    println!(" Name: {}, Age: {}, Pi: {}, In class: {}, Grade: {}",name, age,pi,is_in_class,grade);
    println!("Shadow value of x is: {}", x);
    println!("Number of spaces is : {}", spaces);
-   println!("{},{},{},{},{}", sum, diff, mult, div, mod);
+   println!("{},{},{},{},{}", sum, diff, mult, div, modl);
 
 }
