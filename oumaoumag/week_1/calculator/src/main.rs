@@ -1,4 +1,5 @@
 use std::io;
+use calculator::*;
 
 fn main() {
     println!("Hello, Welcome To Ouma's Custom Simple Math Calculator!");
@@ -10,6 +11,8 @@ fn main() {
     io::stdin()
     .read_line(&mut problem)
     .expect("Failed to read line");
+
+    let result = Calculator(problem.trim());
 
     println!("You types in: {}", problem)
 }
