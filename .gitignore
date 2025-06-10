@@ -1,15 +1,49 @@
-# Ignore build artifacts
+# === Rust build output ===
 /target/
+**/*.rlib
+**/*.rmeta
 
-# Ignore temporary files
+# === Rust/Cargo specific ===
+Cargo.lock
+!Cargo.lock       # Uncomment if you're building a binary app, not a library
+
+# === Dependency folders ===
+/node_modules/    # In case you're using frontend tools
+
+# === Backup files ===
 **/*.rs.bk
 *.log
+*.tmp
+*.swp
+*.swo
 
-# IDEs and editors
+# === IDEs and Editors ===
 .vscode/
 .idea/
+*.code-workspace
 
-# OS-specific
+# === OS-generated files ===
 .DS_Store
 Thumbs.db
+ehthumbs.db
+*.lnk
+Desktop.ini
+
+# === Build/test tools ===
+/coverage/
+*.profraw
+*.profdata
+/target/          # Just to be extra safe
+
+# === Environment/Secrets ===
+.env
+.env.*
+*.key
+*.pem
+*.crt
+
+# === Misc ===
 *.txt
+*.bak
+*.old
+*.orig
