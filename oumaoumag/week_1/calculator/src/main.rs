@@ -2,6 +2,8 @@ use std::io;
 use calculator::*;
 
 fn main() {
+       // Clear screen
+       print!("\x1B[2J\x1B[1;1H");
     // Display welcome message
     println!("{}",
     colorize(&format!("Hello, Welcome To Ouma's Custom Simple Math Calculator!"), 21)
