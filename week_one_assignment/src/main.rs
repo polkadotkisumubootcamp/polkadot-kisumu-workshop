@@ -1,8 +1,17 @@
+use std:: env;
+
 fn main() {
-    println!("Hello, world!");
+   
+    // let mut args = std::env::args();
+    let args: Vec<String> = env::args().collect();
+    if args.len() != 4 {
+        println!("Usage: <num1> <operation> <num2>");
+        return;
+    }
 
 }
 
+// The calculator function takes two integers and a string representing an operation.
 fn calculator(a: i32, b: i32, op : &str ) -> i32 {
 
     if op == "+" {
