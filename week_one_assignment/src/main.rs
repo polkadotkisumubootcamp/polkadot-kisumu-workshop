@@ -9,6 +9,11 @@ fn main() {
         return;
     }
 
+    // Parse the command line arguments
+    mut value1: i32 = args[1].parse().expect("Please provide a valid integer for num1.");
+    let operation: &str = &args[2];
+    mut value2: i32 = args[3].parse().expect("Please provide a valid integer for num2.");
+
 }
 
 // The calculator function takes two integers and a string representing an operation.

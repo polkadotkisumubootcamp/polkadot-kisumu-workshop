@@ -1,0 +1,1 @@
+/home/vandisi/Desktop/github-projects/polkadot-kisumu-workshop/week_one_assignment/target/debug/week_one_assignment: /home/vandisi/Desktop/github-projects/polkadot-kisumu-workshop/week_one_assignment/src/main.rs
