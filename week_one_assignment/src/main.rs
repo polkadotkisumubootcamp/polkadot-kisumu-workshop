@@ -19,12 +19,12 @@ fn main() {
     let value2: i32 = args[3].parse().expect("Please provide a valid integer for num2.");
     println!("{:?}", args);
 
-    let result = calculator(value1, value2, operator);
+    let result = calculator(value1.into(), value2.into(), operator);
     println!("The result is: {}", result) //result
 }
 
 // The calculator function takes two integers and a string representing an operator.
-fn calculator(a: i32, b: i32, op : &str ) -> i32 {
+fn calculator(a: f64, b: f64, op : &str ) -> f64 {
 
     if op == "+" {
         return a + b;
@@ -33,13 +33,13 @@ fn calculator(a: i32, b: i32, op : &str ) -> i32 {
     } else if op == "*" {
         return a * b;
     } else if op == "/" {
-        if b != 0 {
+        if b != 0.0 {
             return a / b;
         } else {
             panic!("Division by zero is not allowed.");
         }
     } else if op == "%" {
-        if b != 0 {
+        if b != 0.0 {
             return a % b;
         } else {
             panic!("Division by zero is not allowed.");
