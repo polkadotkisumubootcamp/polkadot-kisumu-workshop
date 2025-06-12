@@ -1,28 +1,5 @@
 use std:: env;
 
-fn main() {
-   
-    // let mut args = std::env::args();
-    let args: Vec<String> = env::args().collect();
-    //Confirms that we have three arguements. The first arguement(at index zero), is the program name, so it is not parsed.
-    if args.len() != 4 {
-        println!("Usage: <num1> <operator> <num2>");
-        return;
-    }
-
-    // Parse the command line arguments from the second arguement, which is at index zero.
-    // The first arguement is the first value, and should be an integer
-    // The second arguement should be an operator. Always ensure that the multiplication "*" sign is inside quotation marks to avoid missinterpretation by cli
-    // The third arguement should be the second value, which must also be a number. 
-   let value1: i32 = args[1].parse().expect("Please provide a valid integer for num1.");
-    let operator: &str = &args[2];
-    let value2: i32 = args[3].parse().expect("Please provide a valid integer for num2.");
-    println!("{:?}", args);
-
-    let result = calculator(value1.into(), value2.into(), operator);
-    println!("The result is: {}", result) //result
-}
-
 // The calculator function takes two integers and a string representing an operator.
 fn calculator(a: f64, b: f64, op : &str ) -> f64 {
 
@@ -47,4 +24,23 @@ fn calculator(a: f64, b: f64, op : &str ) -> f64 {
         } else {
         panic!("Unsupported operator: {}", op);
     }   
+}
+
+fn main() {
+    let args: Vec<String> = env::args().collect();
+
+    if args.len() != 4 {
+        println!("Usage: <num1> <operator> <num2>");
+        return;
+    }
+
+       let v1 = &args[1];
+       let operator = &args[2];
+        let v2 = &args[3];
+
+        let num1 : f64 = v1.parse::<f64>().expect("Invalid number input for num1: {}");
+        let num2 : f64 = v2.parse::<f64>().expect("Invalid number input for num2: {}");
+        let result = calculator(num1, num2, operator);
+
+        println!("The result is : {}", result);
 }
