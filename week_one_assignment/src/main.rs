@@ -1,5 +1,11 @@
 use std:: env;
 
+// To run this calculator, you need three command line arguments:
+// 1. The first number (num1)
+// 2. The operator (op) which can be one of: +, -, *, /, %
+// 3. The second number (num2) 
+// Example usage: cargo run "10" "*" "5"
+
 // The calculator function takes two integers and a string representing an operator.
 fn calculator(a: f64, b: f64, op : &str ) -> f64 {
 
