@@ -1,0 +1,15 @@
+# Ignore build artifacts
+/target/
+
+# Ignore temporary files
+**/*.rs.bk
+*.log
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+*.txt
