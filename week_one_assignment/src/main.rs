@@ -48,5 +48,5 @@ fn main() {
         let num2 : f64 = v2.parse::<f64>().expect("Invalid number input for num2: {}");
         let result = calculator(num1, num2, operator);
 
-        println!("The result is : {}", result);
+        println!("The result is : {:.3}", result);
 }
