@@ -28,9 +28,12 @@ fn main() {
 
     let temperature_comment = get_temperature_comment(temperature);
     println!(
-        "\n\nTemperature comment for '{} degrees' is '{}'.",
+        "\nTemperature comment for '{} degrees' is '{}'.",
         temperature, temperature_comment
     );
+
+    let clothing_suggestion = suggest_clothing(&temperature_comment);
+    println!("\nClothing suggestion: {}", clothing_suggestion);
 }
 
 // Returns 0.0 as the default value for invalid input
@@ -52,6 +55,29 @@ fn get_temperature_comment(temperature: f32) -> String {
         t if t >= 5.0 => "Cold",
         t if t >= 0.0 => "Very cold",
         _ => "Freezing cold",
+    }
+    .to_string()
+}
+
+fn suggest_clothing(temp_comment: &str) -> String {
+    if temp_comment == "Extremely hot" {
+        "Light clothing, shorts, t-shirt, and a sun hat"
+    } else if temp_comment == "Very hot" {
+        "Light breathable clothing, sunglasses, and a cap"
+    } else if temp_comment == "Hot" {
+        "Light clothing and comfortable shoes"
+    } else if temp_comment == "Warm" {
+        "Light long sleeves or t-shirt"
+    } else if temp_comment == "Mild" {
+        "Light jacket or sweater"
+    } else if temp_comment == "Cool" {
+        "Jacket and long pants"
+    } else if temp_comment == "Cold" {
+        "Heavy jacket, scarf, and warm shoes"
+    } else if temp_comment == "Very cold" {
+        "Winter coat, gloves, scarf, and warm boots"
+    } else {
+        "Heavy winter clothing, thermal wear, and insulated boots"
     }
     .to_string()
 }
