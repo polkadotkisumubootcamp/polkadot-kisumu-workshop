@@ -1,5 +1,8 @@
 use std::io::{self, Write};
 
+const CYAN: &str = "\x1b[36m";
+const RESET: &str = "\x1b[0m";
+
 fn main() {
     loop {
         println!("\nWelcome to weather suggestion assistant!");
@@ -9,10 +12,8 @@ fn main() {
 
         let (clothing, comment) = get_weather_advice(temperature, &weather);
 
-        println!("\nWeather Suggestion Assistant Advice");
-        println!("Temperature: {}°C", temperature);
-        println!("Weather: {}", weather);
-        println!("\nSuggestion: {}", clothing);
+        println!("\n{}Weather Suggestion Assistant Advice{}", CYAN, RESET);
+        println!("Suggestion: {}", clothing);
         println!("Comment: {}", comment);
 
         if !continue_program() {
