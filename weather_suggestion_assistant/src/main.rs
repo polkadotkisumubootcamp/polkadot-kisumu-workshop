@@ -1,83 +1,94 @@
 use std::io::{self, Write};
 
 fn main() {
-    println!(
-        "\nWelcome to weather suggestion assistant. Please enter a temprature value to continue:"
-    );
+    loop {
+        println!("\nWelcome to weather suggestion assistant!");
 
+        let temperature = get_user_input("Please enter temperature: ");
+        let weather = get_weather_input("Enter weather condition: ");
+
+        let (clothing, comment) = get_weather_advice(temperature, &weather);
+
+        println!("\nWeather Suggestion Assistant Advice");
+        println!("Temperature: {}°C", temperature);
+        println!("Weather: {}", weather);
+        println!("\nSuggestion: {}", clothing);
+        println!("Comment: {}", comment);
+
+        if !continue_program() {
+            break;
+        }
+    }
+}
+
+fn get_user_input(prompt: &str) -> f32 {
+    loop {
+        print!("{}", prompt);
+        io::stdout().flush().unwrap();
+
+        let mut input = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
+
+        match input.trim().parse::<f32>() {
+            Ok(value) => return value,
+            Err(_) => println!("Please enter a valid number!"),
+        }
+    }
+}
+
+fn get_weather_input(prompt: &str) -> String {
+    print!("{}", prompt);
     io::stdout().flush().unwrap();
 
     let mut input = String::new();
     io::stdin()
         .read_line(&mut input)
-        .expect("Failed to read line");
+        .expect("Failed to read input");
 
-    let temperature = convert_string_to_float(&input.trim());
-    println!(
-        "Temperature '{}' recorded.\n\nProceed by entering a weather condition:",
-        temperature
-    );
+    input.trim().to_string()
+}
 
-    input = String::new();
+fn get_weather_advice(temp: f32, weather: &str) -> (String, String) {
+    let base_clothing = match temp {
+        t if t >= 30.0 => "Light clothing, shorts, sunhat",
+        t if t >= 20.0 => "Light clothing, t-shirt",
+        t if t >= 10.0 => "Light jacket, long pants",
+        t if t >= 0.0 => "Warm coat, scarf",
+        _ => "Heavy winter clothing, thermal wear",
+    };
+
+    let weather_addon = match weather.to_lowercase().as_str() {
+        "rainy" => " + umbrella and raincoat",
+        "sunny" => " + sunscreen and sunglasses",
+        "cloudy" => " + light windbreaker",
+        _ => "",
+    };
+
+    let comment = match (temp, weather.to_lowercase().as_str()) {
+        (t, _) if t >= 35.0 => "Extreme heat warning!",
+        (t, "rainy") if t < 10.0 => "Cold and wet, be extra careful!",
+        (t, "sunny") if t > 25.0 => "Hot sunny day!",
+        (_, "rainy") => "Carry an umbrella!",
+        (t, _) if t < 0.0 => "Freezing conditions, stay warm!",
+        _ => "Moderate weather conditions",
+    };
+
+    (
+        format!("{}{}", base_clothing, weather_addon),
+        comment.to_string(),
+    )
+}
+
+fn continue_program() -> bool {
+    print!("\nWould you like to continue? (y/n): ");
+    io::stdout().flush().unwrap();
+
+    let mut input = String::new();
     io::stdin()
         .read_line(&mut input)
-        .expect("Failed to read line");
+        .expect("Failed to read input");
 
-    let weather_condition = input.trim();
-    println!("Weather condition '{}' recorded.", weather_condition);
-
-    let temperature_comment = get_temperature_comment(temperature);
-    println!(
-        "\nTemperature comment for '{} degrees' is '{}'.",
-        temperature, temperature_comment
-    );
-
-    let clothing_suggestion = suggest_clothing(&temperature_comment);
-    println!("\nClothing suggestion: {}", clothing_suggestion);
-}
-
-// Returns 0.0 as the default value for invalid input
-fn convert_string_to_float(input: &str) -> f32 {
-    match input.trim().parse::<f32>() {
-        Ok(temp) => temp,
-        Err(_) => 0.0,
-    }
-}
-
-fn get_temperature_comment(temperature: f32) -> String {
-    match temperature {
-        t if t >= 35.0 => "Extremely hot",
-        t if t >= 30.0 => "Very hot",
-        t if t >= 25.0 => "Hot",
-        t if t >= 20.0 => "Warm",
-        t if t >= 15.0 => "Mild",
-        t if t >= 10.0 => "Cool",
-        t if t >= 5.0 => "Cold",
-        t if t >= 0.0 => "Very cold",
-        _ => "Freezing cold",
-    }
-    .to_string()
-}
-
-fn suggest_clothing(temp_comment: &str) -> String {
-    if temp_comment == "Extremely hot" {
-        "Light clothing, shorts, t-shirt, and a sun hat"
-    } else if temp_comment == "Very hot" {
-        "Light breathable clothing, sunglasses, and a cap"
-    } else if temp_comment == "Hot" {
-        "Light clothing and comfortable shoes"
-    } else if temp_comment == "Warm" {
-        "Light long sleeves or t-shirt"
-    } else if temp_comment == "Mild" {
-        "Light jacket or sweater"
-    } else if temp_comment == "Cool" {
-        "Jacket and long pants"
-    } else if temp_comment == "Cold" {
-        "Heavy jacket, scarf, and warm shoes"
-    } else if temp_comment == "Very cold" {
-        "Winter coat, gloves, scarf, and warm boots"
-    } else {
-        "Heavy winter clothing, thermal wear, and insulated boots"
-    }
-    .to_string()
+    input.trim().to_lowercase().starts_with('y')
 }
