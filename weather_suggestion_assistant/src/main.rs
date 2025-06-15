@@ -8,13 +8,13 @@ fn main() {
         println!("\nWelcome to weather suggestion assistant!");
 
         let temperature = get_user_input("Please enter temperature: ");
-        let weather = get_weather_input("Enter weather condition: ");
+        let weather = get_weather_input("Enter weather condition ('sunny' | 'rainy' | 'cloudy'): ");
 
         let (clothing, comment) = get_weather_advice(temperature, &weather);
 
         println!("\n{}Weather Suggestion Assistant Advice{}", CYAN, RESET);
-        println!("Suggestion: {}", clothing);
         println!("Comment: {}", comment);
+        println!("Suggestion: {}", clothing);
 
         if !continue_program() {
             break;
@@ -40,15 +40,26 @@ fn get_user_input(prompt: &str) -> f32 {
 }
 
 fn get_weather_input(prompt: &str) -> String {
-    print!("{}", prompt);
-    io::stdout().flush().unwrap();
+    loop {
+        print!("{}", prompt);
+        io::stdout().flush().unwrap();
 
-    let mut input = String::new();
-    io::stdin()
-        .read_line(&mut input)
-        .expect("Failed to read input");
+        let mut input = String::new();
+        io::stdin()
+            .read_line(&mut input)
+            .expect("Failed to read input");
 
-    input.trim().to_string()
+        let weather = input.trim().to_lowercase();
+
+        match weather.as_str() {
+            "sunny" | "rainy" | "cloudy" => return weather,
+            _ => {
+                println!("Invalid weather condition!");
+                println!("Please enter 'sunny', 'rainy', or 'cloudy'");
+                continue;
+            }
+        }
+    }
 }
 
 fn get_weather_advice(temp: f32, weather: &str) -> (String, String) {
