@@ -1,0 +1,1 @@
+/home/clintonochieng/Desktop/polkadot-kisumu-workshop/Clinton/week3-assignment/target/debug/week3-assignment: /home/clintonochieng/Desktop/polkadot-kisumu-workshop/Clinton/week3-assignment/src/main.rs
