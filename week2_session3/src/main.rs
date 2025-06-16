@@ -32,3 +32,10 @@ fn get_clothing_suggestion(temp: i32) -> String {
         "It's hot! Wear something light.".to_string()
     }
 }
+
+// Function that returns a tuple (clothing, comment)
+fn weather_suggestion(temp: i32, weather: &str) -> (String, String) {
+    let clothing = get_clothing_suggestion(temp);
+    let comment = get_weather_comment(weather);
+    (clothing, comment)
+}
