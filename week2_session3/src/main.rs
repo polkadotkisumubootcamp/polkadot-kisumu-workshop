@@ -19,3 +19,16 @@ fn get_weather_comment(weather: &str) -> String {
         _ => format!("Hmm, I don't recognize '{}', but stay safe out there!", weather),
     }
 }
+
+// Suggest clothing based on temperature
+fn get_clothing_suggestion(temp: i32) -> String {
+    if temp <= 5 {
+        "Wear a heavy jacket.".to_string()
+    } else if temp <= 15 {
+        "A light jacket should be fine.".to_string()
+    } else if temp <= 25 {
+        "T-shirt weather!".to_string()
+    } else {
+        "It's hot! Wear something light.".to_string()
+    }
+}
