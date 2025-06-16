@@ -1,0 +1,8 @@
+[package]
+name = "weather_assistant"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "weather_assistant"
+path = "weather_assistant.rs"
