@@ -39,3 +39,34 @@ fn weather_suggestion(temp: i32, weather: &str) -> (String, String) {
     let comment = get_weather_comment(weather);
     (clothing, comment)
 }
+
+fn main() {
+    loop {
+        println!("\n--- Weather Suggestion Assistant ---");
+
+        // Ask for temperature
+        let temp_input = get_user_input("Enter the temperature (°C): ");
+        let temp: i32 = match temp_input.parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Invalid temperature input. Please enter a number.");
+                continue;
+            }
+        };
+
+        // Ask for weather condition
+        let weather = get_user_input("Enter the weather condition (sunny, rainy, cloudy, snowy): ");
+
+        // Get suggestion
+        let (clothing, comment) = weather_suggestion(temp, &weather);
+        println!("\nClothing Suggestion: {}", clothing);
+        println!("Weather Comment: {}", comment);
+
+        // Ask to repeat
+        let again = get_user_input("\nDo you want another suggestion? (yes/no): ");
+        if again != "yes" {
+            println!("Goodbye! Stay safe and dress well.");
+            break;
+        }
+    }
+}
