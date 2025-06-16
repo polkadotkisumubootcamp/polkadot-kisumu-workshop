@@ -72,3 +72,7 @@ fn get_suggestions(temp: i32, condition: &str) -> (String, String) {
 
     (clothing.to_string(), comment.to_string())
 }
+let (clothing, comment) = get_suggestions(temp, &condition);
+println!("\nSuggestions:");
+println!("- Weather: {}", comment);
+println!("- Clothing: {}", clothing);
