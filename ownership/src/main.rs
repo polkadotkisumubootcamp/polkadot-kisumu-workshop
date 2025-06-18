@@ -16,6 +16,21 @@ println!("Second way: {}", s);
 let t = String::from("Wahala");
 
 change(& t);
+
+// Example 2: Immutable borrows: 
+
+let b = String::from("Kusama");
+let r1 = &b; // Immutable borrow
+let r2 = &b; // Another immutable borrow
+println!("r1: {}, r2: {}", r1, r2);
+
+// let r3 = &mut b; // Mutable borrow
+// println!("r3: {}", r3); // This line would cause a compile-time error
+
+// Example 3: Dangling references
+let dangling = dangle();
+println!("Dangling reference: {}", dangling);
+
 }
 
 fn print_length(s : &mut String) {
@@ -25,4 +40,9 @@ fn print_length(s : &mut String) {
 
 fn change(v: &String) {
     println!("The length is: {}", v.len());
+}
+
+fn dangle() -> String {
+    let s = String::from("buju");
+    s
 }
