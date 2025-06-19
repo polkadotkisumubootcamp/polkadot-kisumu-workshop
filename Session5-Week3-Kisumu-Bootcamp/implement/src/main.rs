@@ -79,3 +79,39 @@ impl turns your struct from just data into a living object that can take action.
 This is a clean way to give your struct a "behavior" — just like a real object.
 */
 
+
+// Example 3: Adding Experience to a Developer
+
+// fn main() {
+//     // Define a struct named Developer with two fields:
+//     struct Developer {
+//         name: String,       // Stores the developer's name
+//         experience: u8,     // Stores the number of years of experience
+//     }
+
+//     // Implement behavior (methods) for the Developer struct
+//     impl Developer {
+//         // Define a method called `add_experience`
+//         // It takes a mutable reference to self (&mut self) so it can modify the struct
+//         // It also takes a parameter `years` which tells how many years to add
+//         fn add_experience(&mut self, years: u8) {
+//             // Increase the current experience by the number of years passed in
+//             self.experience += years;
+//         }
+//     }
+
+//     // Create a Developer instance named `dev`
+//     // We use `mut` so we can change/update its values later
+//     let mut dev = Developer {
+//         name: String::from("Grace"),  // Set the name to "Grace"
+//         experience: 1,                // Grace starts with 1 year of experience
+//     };
+
+//     // Call the method `add_experience` and pass in 2 years
+//     // This adds 2 to Grace's current experience (1 + 2 = 3)
+//     dev.add_experience(2);
+
+//     // Print the updated information to the screen
+//     println!("{} now has {} years of experience.", dev.name, dev.experience);
+//     // Output: Grace now has 3 years of experience.
+// }
