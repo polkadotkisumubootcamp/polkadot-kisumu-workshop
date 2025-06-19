@@ -60,3 +60,32 @@ This is super useful for:
 //     // Optional improvement: You could also use {:#?} for a pretty (multiline) view like this:
 //     // println!("{:#?}", dev);
 // }
+
+
+//example 2
+
+// Derive the Debug trait so the Developer struct can be printed using {:?} or {:#?}
+
+// #[derive(Debug)]
+// struct Developer {
+//     name: String,      // Developer's name as a String
+//     language: String,  // Programming language the developer uses
+// }
+
+// fn main() {
+//     // Create an instance of the Developer struct with name and language
+//     let dev = Developer {
+//         name: "Bob".to_string(),         // Convert &str into a String
+//         language: "Solidity".to_string(),// Convert &str into a String
+//     };
+
+//     // Print the struct in a nicely formatted, line-by-line debug style
+//     // {:#?} is used for pretty-printing with indentation and line breaks
+//     println!("{:#?}", dev);
+
+//     // Output will look like:
+//     // Developer {
+//     //     name: "Bob",
+//     //     language: "Solidity",
+//     // }
+// }
