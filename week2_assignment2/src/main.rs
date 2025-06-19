@@ -14,6 +14,8 @@
 
 // Add a function that returns a borrowed guest
 // name (practice lifetimes).
+
 fn main() {
-    println!("Hello, world!");
+   println!("\t\t🌟🌟Welcome to guest tracker🤝🎉")
+   
 }
