@@ -38,3 +38,33 @@ impl turns your struct from just data into a living object that can take action.
 //     // Tell the Developer to introduce themselves
 //     dev.introduce();
 // }
+
+
+//example 2 
+
+// fn main() {
+//     // Define a struct named Developer with name and experience fields
+//     struct Developer {
+//         name: String,       // name is a String (owned text)
+//         experience: u8,     // experience is an unsigned 8-bit number
+//     }
+
+//     // Implement methods (functions) for the Developer struct
+//     impl Developer {
+//         // Define a method named `summary` that returns a String
+//         fn summary(&self) -> String {
+//             // Use the format! macro to create and return a String
+//             // {} are placeholders for self.name and self.experience
+//             format!("{} has {} years of experience.", self.name, self.experience)
+//         }
+//     }
+
+//     // Create a Developer instance named `dev`
+//     let dev = Developer {
+//         name: String::from("frank"),  // set name to "frank"
+//         experience: 6,                // set experience to 6
+//     };
+
+//     // Call the summary() method on `dev` and print the returned string
+//     println!("{}", dev.summary()); // Output: frank has 6 years of experience.
+// }
