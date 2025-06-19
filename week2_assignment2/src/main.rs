@@ -23,7 +23,11 @@ fn main() {
 
     io::stdin().read_line(&mut guest_name).expect("Failed to read input");
     let guest_name = guest_name.trim(); // Remove any trailing newline or spaces
-    println!("\nHello, {}! Welcome to our guest tracker app!", guest_name);
+    // println!("\nHello, {}! Welcome to our guest tracker app!", guest_name);
+    greet_guest(guest_name);
 
+}
 
+fn greet_guest(guest: &str) {
+    println!("\nHello, {}! Welcome to our guest tracker app 🤝 \nIt's great to see you here! 🎉\n", guest);
 }
