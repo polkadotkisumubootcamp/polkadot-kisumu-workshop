@@ -1,0 +1,6 @@
+[package]
+name = "just_bunch_of_ifelse"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
