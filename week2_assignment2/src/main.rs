@@ -15,7 +15,15 @@
 // Add a function that returns a borrowed guest
 // name (practice lifetimes).
 
+use std::io;
 fn main() {
-   println!("\t\t🌟🌟Welcome to guest tracker🤝🎉")
-   
+   println!("\n\t\t🌟🌟Welcome to guest tracker🤝🎉\n");
+   println!("Kindly input your name below 👇👇");
+    let mut guest_name = String::new();
+
+    io::stdin().read_line(&mut guest_name).expect("Failed to read input");
+    let guest_name = guest_name.trim(); // Remove any trailing newline or spaces
+    println!("\nHello, {}! Welcome to our guest tracker app!", guest_name);
+
+
 }
