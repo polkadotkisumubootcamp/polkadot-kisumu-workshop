@@ -43,3 +43,38 @@ They define what a type can do, but not how — the how is implemented later.
 //     // Call the greet method from the Greet trait
 //     dev.greet(); // Output: Hi, I'm Eve the Developer!
 // }
+
+//Example 2: Another struct using same trait
+
+// Define a trait called Greet
+// A trait is like a contract: any type that uses this trait must define a greet method
+
+// trait Greet {
+//     fn greet(&self); // Method signature: no body here, only the promise
+// }
+
+// // Define a struct called Designer
+// // This struct holds a designer's name
+// struct Designer {
+//     name: String,
+// }
+
+// // Implement the Greet trait for Designer
+// // This means Designer is now allowed to use the greet method defined by the trait
+// impl Greet for Designer {
+//     fn greet(&self) {
+//         // Define how a Designer should greet
+//         println!("Hello! I'm {} the Designer.", self.name);
+//     }
+// }
+
+// // Main function: entry point of the program
+// fn main() {
+//     // Create an instance of Designer with name "Liam"
+//     let des = Designer {
+//         name: "Liam".to_string(), // Convert &str to String
+//     };
+
+//     // Call the greet method (coming from the Greet trait)
+//     des.greet(); // Output: Hello! I'm Liam the Designer.
+// }
