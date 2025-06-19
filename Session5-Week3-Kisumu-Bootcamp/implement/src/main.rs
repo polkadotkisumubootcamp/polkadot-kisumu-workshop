@@ -68,3 +68,14 @@ impl turns your struct from just data into a living object that can take action.
 //     // Call the summary() method on `dev` and print the returned string
 //     println!("{}", dev.summary()); // Output: frank has 6 years of experience.
 // }
+
+/*
+✅ format!() is like println!() but instead of printing, it builds a string and returns it.
+
+📦 You can then use the string anywhere — store it, return it, or print it later.
+
+&self lets the method access the values inside the specific Developer (like dev).
+
+This is a clean way to give your struct a "behavior" — just like a real object.
+*/
+
