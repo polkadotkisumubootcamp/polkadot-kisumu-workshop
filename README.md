@@ -75,3 +75,10 @@ polkadot-kisumu-workshop/
 Ask mentors or facilitators during the session. We’re here to help you succeed!
 
 Happy hacking, Rustaceans! 🦀💻
+
+# Guest Tracker - Week 2 Session 2 Assignment(quinter)
+
+## Setup Instructions
+1. Navigate to project directory:
+   ```bash
+   cd week2/session2/guest-tracker
