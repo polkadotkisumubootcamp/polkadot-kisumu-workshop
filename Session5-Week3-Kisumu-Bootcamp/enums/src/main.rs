@@ -1,3 +1,21 @@
+// enum Direction {
+//     North,
+//     South,
+//     East,
+//     West,
+// }
+
+// fn main() {
+//     let dir = Direction::East;
+
+//     match dir {
+//         Direction::North => println!("Go North"),
+//         Direction::South => println!("Go South"),
+//         Direction::East => println!("Go East"),
+//         Direction::West => println!("Go West"),
+//     }
+// }
+
 // //1. Define the enum:
 // enum Mood {
 //     Happy,
