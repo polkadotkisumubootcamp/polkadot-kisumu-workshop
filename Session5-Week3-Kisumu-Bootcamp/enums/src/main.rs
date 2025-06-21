@@ -18,3 +18,41 @@
 //     } 
     
 // }
+
+
+// // The `derive` attribute automatically creates the implementation
+// // required to make this `enum` printable with `fmt::Debug`.
+// #[derive(Debug)]
+
+// enum Month_name {
+// January,
+// February,
+// March,
+// April,
+// May,
+// June,
+// July,
+// August,
+// September,
+// October,
+// November,
+// December
+// }
+// fn main() {
+//     let jan = Month_name :: January;
+//     let feb = Month_name :: February;
+//     let mar = Month_name :: March;
+//     let apr = Month_name :: April;
+//     let may = Month_name :: May;
+//     let jun = Month_name :: June;
+//     let jul = Month_name :: July;
+//     let aug = Month_name :: August;
+//     let sep = Month_name :: September;
+//     let oct = Month_name :: October;
+//     let nov = Month_name :: November;
+//     let dec = Month_name :: December;
+
+//    println!("{:?}",jan);
+//    println!("{:?}",feb);
+//    println!("{:?}",dec);
+// }
