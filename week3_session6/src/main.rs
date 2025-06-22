@@ -47,3 +47,29 @@ fn first_alphabetically<'a>(name1: &'a str, name2: &'a str) -> &'a str {
         name2
     }
 }
+
+fn main() {
+    // Create a Developer instance
+    let dev = Developer {
+        name: String::from("Doreen"),
+        favorite_lang: String::from("Polkadot"),
+        years_experience: 3,
+    };
+
+    // Create a Designer instance
+    let designer = Designer {
+        name: String::from("Ann"),
+        favorite_tool: String::from("Figma"),
+        focus_area: String::from("UX/UI for dApps"),
+    };
+
+    // Call their introductions
+    dev.introduced();
+    designer.introduced();
+
+    // Demonstrate the lifetime function
+    let name1 = "Doreen";
+    let name2 = "Ann";
+    let longer = first_alphabetically(name1, name2);
+    println!("The name that appears first alphabetically is: {}", longer);
+}
