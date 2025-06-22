@@ -21,3 +21,10 @@ impl Introduce for Developer {
         );
     }
 }
+
+// Defining a Designer struct
+struct Designer {
+    name: String,
+    favorite_tool: String,
+    focus_area: String,
+}
