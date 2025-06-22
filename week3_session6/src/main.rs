@@ -38,3 +38,12 @@ impl Introduce for Designer {
         );
     }
 }
+
+// Bonus: Function using lifetimes that returns the name that comes first alphabetically
+fn first_alphabetically<'a>(name1: &'a str, name2: &'a str) -> &'a str {
+    if name1 < name2 {
+        name1
+    } else {
+        name2
+    }
+}
