@@ -28,3 +28,13 @@ struct Designer {
     favorite_tool: String,
     focus_area: String,
 }
+
+// Implementing the Introduce trait for Designer
+impl Introduce for Designer {
+    fn introduced(&self) {
+        println!(
+            "Hello! I'm {}, a Web3 Designer focused on {} using {}.",
+            self.name, self.focus_area, self.favorite_tool
+        );
+    }
+}
