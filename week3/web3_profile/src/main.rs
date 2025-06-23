@@ -18,6 +18,21 @@ impl<'a> Introduce for Developer<'a> {
         );
     }
 }
+// Impl block for Developer 
+impl<'a> Developer<'a> {
+    fn new(name: &'a str, favorite_lang: &'a str, years_experience: u8) -> Self {
+        Developer {
+            name,
+            favorite_lang,
+            years_experience,
+        }
+    }
+
+    // Function using lifetime annotation
+    fn favorite_language<'b>(&'b self) -> &'b str {
+        self.favorite_lang
+    }
+}
 
 // Designer struct
 struct Designer<'a> {
@@ -34,4 +49,17 @@ impl<'a> Introduce for Designer<'a> {
             self.name, self.design_tool, self.years_experience
         );
     }
+}
+
+fn main() {
+    let dev = Developer::new("Cynthia", "Rust", 3);
+    dev.introduce();
+    println!("Favorite Language: {}", dev.favorite_language());
+
+    let designer = Designer {
+        name: "Brian",
+        design_tool: "Figma",
+        years_experience: 4,
+    };
+    designer.introduce();
 }
