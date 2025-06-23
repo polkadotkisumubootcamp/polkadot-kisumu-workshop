@@ -66,9 +66,9 @@ impl IntroduceName for Designer {
 fn main() {
     // Instantiate a Developer
     let dev = Developer {
-        name: "Alice".into(),
+        name: "Clinton".into(),
         favorite_lang: "Rust".into(),
-        years_experience: 3,
+        years_experience: 2,
     };
 
     // Instantiate a Designer
