@@ -11,14 +11,14 @@ A Rust implementation modeling Web3 professionals (developers and designers) wit
 
 ## Usage
 ```rust
-let dev = get_web3_professional("developer", "Alice", "Rust", 3);
+let dev = get_web3_professional("developer", "James", "Rust", 3);
 dev.introduce();
 
-Requirements
-
-    Rust 1.60+
-
-    Cargo
+  Requirements
+  
+      Rust 1.60+
+  
+      Cargo
 
 ## Instalaation
 
