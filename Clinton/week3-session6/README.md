@@ -2,7 +2,7 @@
 
 1. **Navigate to the project directory** (if using `cargo new`):
 ```bash
-cd web3-profile-system
+cd week3-session6
 
     Place the code inside the src/main.rs file.
 
