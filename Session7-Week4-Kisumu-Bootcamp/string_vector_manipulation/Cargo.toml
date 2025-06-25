@@ -1,0 +1,6 @@
+[package]
+name = "string_vector_manipulation"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
