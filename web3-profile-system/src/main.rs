@@ -52,3 +52,12 @@ impl designer {
         println!("Hello, my name is {} and I am a designer who has been designing for {} years. My favorite tool is {}", self.name, self.projects, self.favorite_tool);
     }
  }
+  // Lifetimes illustration for the longest between designer and developer
+
+  fn longest <'a>(x:'a &str, y:'a &str) -> & 'a str {
+    if x.len() > y.len() {
+        x
+    }else{
+        y
+    }
+  }
