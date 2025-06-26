@@ -29,12 +29,19 @@ fn main() {
     println!("\nContributors before push/pop:");
     print_list(&contributors);
 
-        // Implement Push a new contributor and pop (remove) the last contributor
-    contributors.push("✅ Active: Zainab".to_string());
+    // Implement Push a new contributor and pop (remove) the last contributor
+    contributors.push("Active: Zainab".to_string());
 
 
     contributors.pop();
 
     println!("\nContributors after push/pop:");
     print_list(&contributors);
+}
+
+// Generic function to print any list
+fn print_list<T: std::fmt::Display>(list: &Vec<T>) {
+    for item in list {
+        println!("{}", item);
+    }
 }
