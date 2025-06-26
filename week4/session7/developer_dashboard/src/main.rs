@@ -25,7 +25,16 @@ fn main() {
      // Display total number of contributors
     println!("\nTotal contributors: {}", contributors.len());
 
-    // Print list before push/pop methods
+   
     println!("\nContributors before push/pop:");
+    print_list(&contributors);
+
+        // Implement Push a new contributor and pop (remove) the last contributor
+    contributors.push("✅ Active: Zainab".to_string());
+
+
+    contributors.pop();
+
+    println!("\nContributors after push/pop:");
     print_list(&contributors);
 }
