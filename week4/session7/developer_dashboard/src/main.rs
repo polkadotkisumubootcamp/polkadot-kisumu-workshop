@@ -8,4 +8,9 @@ fn main() {
         "Grace".to_string(),
         "Liam".to_string(),
     ];
+
+        // Add a status tag using mutable iteration
+    for name in contributors.iter_mut() {
+        *name = format!("Active: {}", name);
+    }
 }
