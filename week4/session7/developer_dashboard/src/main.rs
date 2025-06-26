@@ -32,10 +32,13 @@ fn main() {
     // Implement Push a new contributor and pop (remove) the last contributor
     contributors.push("Active: Zainab".to_string());
 
+    println!("\nContributors after push ");
+    print_list(&contributors);
+
 
     contributors.pop();
 
-    println!("\nContributors after push/pop:");
+    println!("\nContributors after pop:");
     print_list(&contributors);
 }
 

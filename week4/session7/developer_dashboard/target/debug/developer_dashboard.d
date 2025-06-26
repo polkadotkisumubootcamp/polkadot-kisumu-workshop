@@ -1,0 +1,1 @@
+/home/cynthia/Documents/polkadot-kisumu-workshop/week4/session7/developer_dashboard/target/debug/developer_dashboard: /home/cynthia/Documents/polkadot-kisumu-workshop/week4/session7/developer_dashboard/src/main.rs
