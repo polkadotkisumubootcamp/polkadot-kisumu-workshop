@@ -21,4 +21,11 @@ fn main() {
     for person in preview {
         println!("{}", person);
     }
+
+     // Display total number of contributors
+    println!("\nTotal contributors: {}", contributors.len());
+
+    // Print list before push/pop methods
+    println!("\nContributors before push/pop:");
+    print_list(&contributors);
 }
